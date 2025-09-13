@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Match</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-md md:max-w-4xl mx-auto">
+        <h1 class="game-title text-6xl md:text-7xl font-bangers text-center mb-4">MARVEL MATCH</h1>
+
+        <div class="flex flex-col md:flex-row md:justify-center md:gap-8">
+            
+            <div id="game-board" class="comic-panel grid grid-cols-8 gap-1 p-2 aspect-square w-full md:w-auto md:max-w-lg"></div>
+
+            <div class="flex flex-row justify-around mt-4 md:flex-col md:justify-start md:mt-0 md:space-y-6">
+                <div class="comic-panel text-center p-4 md:p-6 w-36">
+                    <span class="font-bangers text-blue-800 text-2xl md:text-3xl">Score</span>
+                    <p id="score" class="text-3xl md:text-4xl font-bold text-gray-300">0</p>
+                </div>
+                <div class="comic-panel text-center p-4 md:p-6 w-36">
+                    <span class="font-bangers text-blue-800 text-2xl md:text-3xl">Moves</span>
+                    <p id="moves" class="text-3xl md:text-4xl font-bold text-gray-300">30</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="comic-panel p-8 text-center transform transition-all scale-95 max-w-sm">
+            <h2 id="modal-title" class="text-5xl font-bangers text-blue-600 mb-4">Great Try, Hero!</h2>
+            <p class="text-gray-300 mb-6 text-xl font-semibold">Your final score is <span id="final-score" class="font-bold text-gray-500">0</span>.</p>
+            <button id="restart-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-2xl font-bangers transition-transform transform hover:scale-105 shadow-lg border-2 border-red-800">
+                Play Again!
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="candies.js"></script>
+</body>
+</html>
